@@ -37,4 +37,4 @@ services:
   frontend:
     image: udagram-frontend:local
     ports:
-      - "8100:80"
+      - "8100:8080"
