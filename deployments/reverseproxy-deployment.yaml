@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverseproxy
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      run: reverseproxy
+  template:
+    metadata:
+      labels:
+        run: reverseproxy
+    spec:
+      containers:
+      - name: reverseproxy
+        image: docker.io/chimezdev/udagram-reverseproxy:v3
+        ports:
+        - containerPort: 80         
+        resources:
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "500m"       
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: reverseproxy
+  name: reverseproxy
+spec:
+  ports:
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+  selector:
+    service: reverseproxy
+  type: LoadBalancer 
