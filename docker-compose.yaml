@@ -1,9 +1,9 @@
 version: "3"
 services:
   reverseproxy:
-      image: reverseproxy
+      image: udagram-reverseproxy
       ports:
-          - 8080:8080
+          - "8080:8080"
       restart: always
       depends_on:
         - backend-user
@@ -35,6 +35,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   frontend:
-    image: udagram-frontend:local
+    image: udagram-frontend
     ports:
-      - "8100:8080"
+      - "8100:80"
