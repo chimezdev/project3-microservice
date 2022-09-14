@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: backend-feed
-        image: docker.io/chimezdev/udagram-api-feed:v3
+        image: docker.io/chimezdev/udagram-api-feed:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         resources:
           requests:
             cpu: "400m"
@@ -63,7 +63,7 @@ spec:
             secretKeyRef:
               name: env-secret
               key: POSTGRES_PASSWORD
-        - name: POSTGRESS_USERNAME
+        - name: POSTGRES_USERNAME
           valueFrom:
             secretKeyRef:
               name: env-secret

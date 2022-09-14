@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: docker.io/chimezdev/udagram-reverseproxy:v3
+        image: docker.io/chimezdev/udagram-reverseproxy:latest
         ports:
-        - containerPort: 80         
+        - containerPort: 8080         
         resources:
           requests:
             cpu: "400m"
