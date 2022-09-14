@@ -31,3 +31,4 @@ after_success:
   - docker push chimezdev/udagram-frontend:v3
   - docker push chimezdev/udagram-reverseproxy:v3
   
+  
