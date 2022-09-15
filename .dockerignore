@@ -2,3 +2,4 @@
 env-configmap.yaml
 env-secret.yaml
 aws-secret.yaml
+set_env.sh
