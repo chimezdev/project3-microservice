@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend-user
-        image: docker.io/chimezdev/udagram-api-user:latest
+        image: docker.io/chimezdev/udagram-api-user:v1
         ports:
         - containerPort: 8080
         resources:
